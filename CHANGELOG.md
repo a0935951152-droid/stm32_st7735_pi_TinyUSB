@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Verified — 實機驗證結果
+- ✅ **USB CDC enumeration 成功**：板上 D+ pull-up 阻值正確，`/dev/ttyACM0` 在 Pi 上自動出現
+- 📝 **Linux 權限**：使用者需加入 `dialout` 群組才能不靠 sudo 開 ACM 裝置（README 已補步驟）
+
 ## [0.1.0] — 2026-05-12
 
 第一個可用版本：從零開始 bare-metal、跑通 LED → ST7735 LCD → USB CDC 收圖整條流水線。

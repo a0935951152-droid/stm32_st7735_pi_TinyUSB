@@ -86,7 +86,16 @@ LCD pin1 (BLK) 對 J6 pin8 (BL)；LCD pin8 (VCC) 對 J6 pin1 (3V3)。詳見 `CLA
 ```bash
 lsusb | grep Cafe          # 應該看到 "Anthropic Demo STM32 ImgRecv"
 ls /dev/ttyACM*            # 應該出現 ttyACM0
+```
 
+**權限**：第一次跑會碰到 `Permission denied: '/dev/ttyACM0'`，把使用者加進 `dialout` 群組：
+```bash
+sudo usermod -aG dialout $USER
+# 登出再登入（或重開機）讓群組生效
+```
+若只想先測一次：直接 `sudo ./tools/send_image.py ...`。
+
+```bash
 ./tools/send_image.py avatar.png            # 預設 /dev/ttyACM0
 ./tools/send_image.py avatar.jpg /dev/ttyACM1
 ```

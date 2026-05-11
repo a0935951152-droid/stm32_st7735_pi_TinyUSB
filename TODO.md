@@ -1,9 +1,9 @@
 # TODO
 
 ## 🟥 必須驗證（next step）
-- [ ] **USB enumeration 實機測試**：板子接到 Pi，`lsusb | grep Cafe` 確認看到裝置、`/dev/ttyACM0` 出現
-- [ ] **完整圖片傳輸測試**：`tools/send_image.py` 推一張 PNG 看是否正確顯示在 LCD
-- [ ] **D+ pull-up 電阻檢查**：若 enumeration 失敗，用萬用表量 PA12 對 3V3 之間的阻值是否為 1.5 kΩ；若是常見的錯誤值 10 kΩ，需要外掛 1.5 kΩ pull-up
+- [x] ~~**USB enumeration 實機測試**：板子接到 Pi，`/dev/ttyACM0` 出現~~ ✅ 2026-05-12
+- [x] ~~**D+ pull-up 電阻檢查**~~ ✅ enumeration 成功代表阻值正確，不用外掛
+- [ ] **完整圖片傳輸測試**：`tools/send_image.py claude.jpg` 看圖是否正確顯示在 LCD（先解 dialout 權限）
 
 ## 🟧 短期可優化
 - [ ] **傳輸進度顯示**：在 LCD 邊緣畫一條進度條（用前幾個 row 當進度條，圖片內容從第 4 row 開始畫）
